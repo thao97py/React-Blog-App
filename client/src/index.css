@@ -1,0 +1,11 @@
+*{
+    margin:0;
+  }    
+  .link{
+    text-decoration: none;
+    color: inherit;
+  }
+  .active{
+    color:teal;
+    font-weight: 400;
+  }
