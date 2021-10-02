@@ -1,21 +1,27 @@
 import "./post.css"
 import fog from "../../images/fog.jpg"
 import { Link } from "react-router-dom"
-export default function Post() {
+
+export default function Post({post}) {
+    const imageFolderURL ="http://localhost:5000/images/" ;
     return (
         <div className="post">
-            <img className="postImg" src={fog} alt="post" />
+            {post.photo && (
+                <img 
+                    className="postImg" src={imageFolderURL + post.photo} alt="post" 
+                />
+            )}
             <div className="postInfo">
-                <div className="postCats">
-                    <span className="postCat">Music</span>
-                    <span className="postCat">Life</span>
+                <div className="postCats">{
+                    post.categories.map((eachCategory) =>(
+
+                        <span className="postCat">{eachCategory}</span>
+                    ))}
                 </div>
-                <span className="postTitle"> <Link className="link" to="/post/:postId"> Lorem ipsum dolor sit.</Link> </span>
+                <span className="postTitle"> <Link className="link" to={`/post/${post._id}`}>{post.title}</Link> </span>
                 <hr />
-                <span className="postDate">1 hour ago</span>
-                <p className="postDesc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam et, reprehenderit quo maxime quas ullam itaque blanditiis consequuntur distinctio commodi. Quo minus exercitationem aspernatur, nostrum architecto ipsum eos eveniet pariatur quia rem ducimus consectetur excepturi et sapiente doloremque. Nihil, fuga?
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam et, reprehenderit quo maxime quas ullam itaque blanditiis consequuntur distinctio commodi. Quo minus exercitationem aspernatur, nostrum architecto ipsum eos eveniet pariatur quia rem ducimus consectetur excepturi et sapiente doloremque. Nihil, fuga?
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam et, reprehenderit quo maxime quas ullam itaque blanditiis consequuntur distinctio commodi. Quo minus exercitationem aspernatur, nostrum architecto ipsum eos eveniet pariatur quia rem ducimus consectetur excepturi et sapiente doloremque. Nihil, fuga?</p>
+                <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
+                <p className="postDesc">{post.desc}</p>
             </div>
         </div>
     )

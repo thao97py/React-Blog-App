@@ -52,6 +52,12 @@
     border-radius: 10px;
     transition: all 0.3s ease;
 }
+.registerError{
+    color: red;
+    font-weight: 300;
+    font-family: 'Lora', serif;
+    margin-top: 10px;
+}
 .registerLoginButton:hover{
     color: lightcoral;
     background-color: white;

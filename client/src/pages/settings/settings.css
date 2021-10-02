@@ -4,7 +4,7 @@
 }
 .settingsWrapper{
     flex:9;
-    padding: 20px ;
+    padding: 20px 15% ;
 }
 .settingsPPImg{
     width: 100%;
@@ -80,4 +80,9 @@
     color: teal;
     background-color: white;
     border:2px solid teal;
+}
+.settingsSuccessUpdate{
+    color:green;
+    margin-top: 20px;
+    text-align: center;
 }

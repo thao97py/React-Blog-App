@@ -1,9 +1,21 @@
 .write{
     padding-top: 50px;
+    padding-left: 8%;
+}
+.writeHeader{
+    display: flex;
+    justify-content: center;
+    font-family: 'Varela Round', sans-serif;
+    margin-bottom: 3%;
+    color: rgb(22, 78, 50);
+}
+.writeHeader i{
+    margin: 0 10px 20px;
 }
 .writeImg{
     width: 70vw;
     margin-left: 15%;
+    justify-content: center;
     height: 250px;
     border-radius: 10px;
     object-fit: cover;
@@ -25,6 +37,7 @@
     font-size: 20px;
     color: rgb(97, 93, 93);
     cursor: pointer;
+    margin-right: 10px;
 }
 .writeInput{
     font-size: 30px;
@@ -44,9 +57,22 @@
     top: 100px;
     right:50px;
     background-color: teal;
-    padding: 10px;
+    padding: 8px;
     border: none;
     border-radius: 10px;
+    border:2px solid teal;
     color: #fff;
     font-size: 16px;
+    transition: all 0.3s ease;
+}
+.writeSubmit:hover{
+    background-color: #fff;
+    color: teal;
+}
+.writeFormUpload{
+    display: flex;
+    justify-content:left;
+    font-family: 'Varela Round', sans-serif;
+    color: rgb(126, 120, 120);
+    align-items: center;
 }

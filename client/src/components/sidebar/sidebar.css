@@ -43,6 +43,10 @@
     margin-top: 15px;
     cursor: pointer;
 }
+.sidebarListItem:hover{
+    color: orange;
+    transform: scale(1.1);
+}
 .sidebarSocial{
     margin-top: 15px;
     width: 250px;

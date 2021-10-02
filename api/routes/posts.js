@@ -9,7 +9,7 @@ const { route } = require("./auth");
 
 
 //CREATE A POST
-router.post("/:user_id", async(req,res)=>{ 
+router.post("/", async(req,res)=>{ 
     const newPost = new Post(req.body);  //create of new object for Post model
     try{
         const savedPost = await newPost.save();
@@ -43,6 +43,8 @@ router.put("/:post_id", async(req,res)=>{
 router.delete("/:post_id", async(req,res)=>{ 
     try{
         const post = await Post.findById(req.params.post_id);
+            console.log("post.username***: "+post.username);
+            console.log("req.body.username***: "+req.body.username);
             if(post.username === req.body.username){
                 try{
                    await post.delete();
@@ -72,8 +74,8 @@ router.get("/:post_id", async(req,res)=>{
 //GET ALL POSTS 
 router.get("/", async(req,res) =>{
     //query is dynamic parameters we can add in the url. For ex: /?user=thao, /?cat=life, or /?cat=music&user=thao
-    const username = req.query.user;
-    const catName = req.query.cat;
+    const username = req.query.user; //get value assigned to variable user in url after ?
+    const catName = req.query.cat; //get value assigned to variable cat in url after ?
     try{
         let posts;
         if(username && catName){

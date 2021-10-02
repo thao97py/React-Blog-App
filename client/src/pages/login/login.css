@@ -40,6 +40,12 @@
     color: lightcoral;
     background-color: white;
 }
+.loginButton:disabled{
+    cursor:none;
+    pointer-events: none;
+    background-color: rgb(241, 199, 184);
+    border: 2px solid rgb(241, 199, 184);
+}
 .loginRegisterButton{
     position: absolute;
     top: 60px;
@@ -55,4 +61,10 @@
 .loginRegisterButton:hover{
     color: teal;
     background-color: white;
+}
+.loginError{
+    color: red;
+    font-weight: 300;
+    font-family: 'Lora', serif;
+    margin-top: 10px;
 }
