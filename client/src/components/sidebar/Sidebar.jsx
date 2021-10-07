@@ -15,6 +15,10 @@ export default function Sidebar() {
         getCats()
     },[]);
 
+    const openExternalPage=(exUrl)=>{
+        window.open(exUrl, '_blank');
+    };
+
     return (
         <div className="sidebar">
             <div className="sidebarItem">
@@ -27,7 +31,7 @@ export default function Sidebar() {
                 <ul className="sidebarList">
                     {cats.map((eachCategory)=>(
                     <Link className= "link" to={`/?cat=${eachCategory.catName}`}>
-                    <li className="sidebarListItem">{eachCategory.catName}</li>
+                    <li className="sidebarListItem"> <i className="postTag fas fa-tag"></i>{eachCategory.catName}</li>
                     </Link>
                     ))}
                 </ul>
@@ -35,10 +39,10 @@ export default function Sidebar() {
             <div className="sidebarItem">
                 <span className="sidebarTitle">FOLLOW US</span>
                 <div className="sidebarSocial">
-                    <i className="sidebarIcon fab fa-facebook-square"></i>
-                    <i className="sidebarIcon fab fa-twitter-square"></i>
-                    <i className="sidebarIcon fab fa-pinterest-square"></i>
-                    <i className="sidebarIcon fab fa-instagram-square"></i>
+                <i className="sidebarIcon fab fa-facebook-square" onClick={()=> openExternalPage('https://www.facebook.com/phuongthao.truongthi.98')}></i>
+                <i className="sidebarIcon fab fa-github-square" onClick={()=> openExternalPage('https://github.com/thao97py/React-Blog-App')}></i>
+                <i className="sidebarIcon fab fa-pinterest-square" onClick={()=> openExternalPage('https://www.pinterest.com/')}></i>
+                <i className="sidebarIcon fab fa-linkedin" onClick={()=> openExternalPage('https://www.linkedin.com/in/thao97py/')}></i>
                 </div>
             </div>
         </div>

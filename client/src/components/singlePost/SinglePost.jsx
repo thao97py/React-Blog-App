@@ -1,5 +1,4 @@
 import "./singlePost.css"
-import fog from "../../images/fog.jpg"
 import { useLocation } from "react-router";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";

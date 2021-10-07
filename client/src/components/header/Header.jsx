@@ -1,5 +1,5 @@
 import './header.css'
-import wintertree from '../../images/wintertree.jpg'
+import flowers from '../../images/flowers.jpg'
 export default function Header() {
     return (
         <div className="header">
@@ -7,7 +7,7 @@ export default function Header() {
                 <span className= "headerTitleSm">React & Node</span>
                 <span className= "headerTitleLg">Blog</span>
             </div>
-            <img src={wintertree} alt="" className="headerImg" />
+          
         </div>
     )
 }

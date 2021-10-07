@@ -1,12 +1,11 @@
 import "./settings.css"
 import Sidebar from "../../components/sidebar/Sidebar"
-import sunflower from "../../images/sunflower.jpg"
 import { useContext,useState } from "react"
 import { Context } from "../../context/Context"
 import axios from "axios"
 
 export default function Settings() {
-    const [username,setUsername] = useState("");
+    const [userName,setUsername] = useState("");
     const [userEmail,setUserEmail] = useState("");
     const [userPassword,setUserPassword] = useState("");
     //const [userPic,setUserPic]=useState(null);
@@ -19,9 +18,9 @@ export default function Settings() {
         e.preventDefault();
         dispatch({type:"UPDATE_START"});
         const updatedUser = {userId:user._id,
-                            username,
-                            userEmail,
-                            userPassword
+                            username:userName,
+                            useremail:userEmail,
+                            userpassword:userPassword
                             };
         if(newUserPic){
             const data = new FormData();
@@ -73,7 +72,7 @@ export default function Settings() {
                         placeholder = {user.username}
                         onChange={e=> setUsername(e.target.value)}
                     />
-                    <label>Eamil</label>
+                    <label>Email</label>
                     <input 
                         type="email" 
                         placeholder = {user.email}
@@ -82,6 +81,7 @@ export default function Settings() {
                     <label>Password</label>
                     <input 
                         type="password" 
+                        placeholder = "************"
                         onChange={e=> setUserPassword(e.target.value)}
                     />
                     <button className="settingsSubmit" type="submit">Update</button>

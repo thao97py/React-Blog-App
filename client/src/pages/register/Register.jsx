@@ -9,6 +9,7 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const userFirstPhoto ="maleAvatar.png";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,7 +18,8 @@ export default function Register() {
         const res = await axios.post("/auth/register", {
             username,
             email,
-            password
+            password,
+            profilePic:userFirstPhoto,
         }).then(res => {
             res.data && window.location.replace("/login");
         }).catch(error => {
@@ -44,6 +46,7 @@ export default function Register() {
                     type="text"
                     className="registerInput"
                     placeholder="Enter your username..."
+                    required
                     onChange={e => setUsername(e.target.value)} //e is event
                 />
                 <label>Email</label>
@@ -51,6 +54,7 @@ export default function Register() {
                     type="text"
                     className="registerInput"
                     placeholder="Enter your email..."
+                    required
                     onChange={e => setEmail(e.target.value)} //e is event
                 />
                 <label>Password</label>
@@ -58,6 +62,7 @@ export default function Register() {
                     type="password"
                     className="registerInput"
                     placeholder="Enter your password..."
+                    required
                     onChange={e => setPassword(e.target.value)} //e is event
                 />
                 <button className="registerButton" type="submit">Register</button>

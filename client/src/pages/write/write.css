@@ -26,6 +26,12 @@
 .writeFormGroup{
     margin-left: 15%;
 }
+.writeFormGroup i{
+    color: tomato;
+}
+.writeFormGroup .fas{
+    font-size: 20px;
+}
 .writeIcon{
     width: 25px;
     height: 25px;
@@ -42,7 +48,7 @@
 .writeInput{
     font-size: 30px;
     border:none;
-    padding:20px;
+    padding: 10px 20px;
     width:70vw;
 }
 .writeInput:focus{
@@ -51,6 +57,26 @@
 .writeText{
     font-size: 20px;
     height: 100vh;
+}
+.writeFormCats{
+    margin-top: 20px;
+    align-items:center;
+    color: rgb(88, 85, 85);
+    font-family: 'Varela Round', sans-serif;
+    width: 600px;
+}
+.writeFormCats i{
+    margin-right: 5px ;
+}
+
+.writeFormStory{
+    display: flex;
+}
+.writeFormStory .secondFeather{
+    margin-top: 7px;
+}
+.writeFormStory .writeInput{
+    padding-top: 0%;
 }
 .writeSubmit{
     position: absolute;

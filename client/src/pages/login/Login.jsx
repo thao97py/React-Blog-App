@@ -14,8 +14,6 @@ export default function Login() {
     const handleSubmit = async(e)=>{  //e is event
         e.preventDefault();
         dispatch({type:"LOGIN_START"});
-        
-            console.log("hello");
             const res = await axios.post("/auth/login",{
                 username:userRef.current.value,
                 password: passwordRef.current.value,
@@ -48,6 +46,7 @@ export default function Login() {
                     type="text" 
                     className="loginInput" 
                     placeholder="Enter your username..." 
+                    required
                     ref={userRef}
                 />
                 <label>Password</label>
@@ -55,6 +54,7 @@ export default function Login() {
                     type="password" 
                     className="loginInput" 
                     placeholder="Enter your password..." 
+                    required
                     ref={passwordRef}
                 />
                 <button className="loginButton" type="submit" disabled={isFetching}>Login</button>

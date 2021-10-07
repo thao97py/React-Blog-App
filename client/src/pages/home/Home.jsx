@@ -12,7 +12,7 @@ export default function Home() {
     /**search is one of properties of object returned by useLocation()
      * This statement is equal to const search = useLocation().search;
      * */
-    console.log("search:" +search);
+    //console.log("search:" +search);
     useEffect(() => {
         const fetchPosts = async()=>{
            const res =await axios.get("/posts/" + search);  //invoke get method to get all posts

@@ -25,12 +25,18 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    border:1px solid #fff;
+}
+.topImg:hover{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-color: rgb(138, 233, 233);
 }
 .topIcon{
     font-size: 20px;
     margin-right: 10px;
     color: #444;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 .topIcon:hover{
     color:lightcoral;
@@ -46,14 +52,15 @@
 }
 .topListItem{
     margin-right: 20px;
-    font-size: 18px;
-    font-weight: 350;
+    font-size: 22px;
+    font-weight: 380;
     cursor: pointer;
+}
+.topListItem .link:hover{
+    color:teal !important;
 }
 .topListItem:hover{
     color:teal;
-    transform: scale(1.1);
-    font-weight: 400;
 }
 .topSearchIcon{
     font-size: 18px;

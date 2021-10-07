@@ -42,10 +42,10 @@
     width: 50%;
     margin-top: 15px;
     cursor: pointer;
+    color: #be9656;
 }
 .sidebarListItem:hover{
     color: orange;
-    transform: scale(1.1);
 }
 .sidebarSocial{
     margin-top: 15px;
@@ -58,4 +58,9 @@
     font-size: 16px;
     margin-left: 10px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+.sidebarIcon:hover{
+        color:lightcoral;
+        font-weight: 400;
 }
