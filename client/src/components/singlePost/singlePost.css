@@ -76,6 +76,7 @@
     color:#666;
     font-size: 18px;
     line-height: 25px;
+    min-height: 600px;
 }
 .singlePostDescInput:focus{
     outline: none;

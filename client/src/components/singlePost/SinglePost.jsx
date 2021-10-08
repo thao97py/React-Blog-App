@@ -138,6 +138,7 @@ export default function SinglePost() {
                         className="singlePostDescInput"
                         value={updatedDesc}
                         onChange={(e) => setUpdatedDesc(e.target.value)}
+                        autoResizeEnabled={true}
                     ></textarea>
                 ) : (
                     <p className="singlePostDesc">{updatedDesc}</p>

@@ -5,22 +5,25 @@ import { Context } from "../../context/Context"
 import axios from "axios"
 
 export default function Settings() {
-    const [userName,setUsername] = useState("");
-    const [userEmail,setUserEmail] = useState("");
-    const [userPassword,setUserPassword] = useState("");
+    const {user,dispatch}=useContext(Context);
+
+    const [userName,setUsername] = useState(user.username);
+    const [userEmail,setUserEmail] = useState(user.email);
+    const [userPassword,setUserPassword] = useState(user.password);
     //const [userPic,setUserPic]=useState(null);
     const [newUserPic,setNewUserPic] =useState(null);
-    const {user,dispatch}=useContext(Context);
+    
     const [successUpdated,setSuccessUpdated]=useState(false);
     const publicFolder ="http://localhost:5000/images/";
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
         dispatch({type:"UPDATE_START"});
+        console.log("pw: " + userPassword);
         const updatedUser = {userId:user._id,
                             username:userName,
-                            useremail:userEmail,
-                            userpassword:userPassword
+                            email:userEmail,
+                            password:userPassword
                             };
         if(newUserPic){
             const data = new FormData();
@@ -37,11 +40,15 @@ export default function Settings() {
 
         try{
             const res = await axios.put("/users/" +user._id,updatedUser);
-            setSuccessUpdated(true);
             dispatch({type:"UPDATE_SUCCESS",payload:res.data});
+            setSuccessUpdated(true);
+           
         }catch(err){
             dispatch({type:"UPDATE_FAILURE"});
         }
+        setTimeout(()=>{
+            setSuccessUpdated(false);
+        },7000);
     };
     
     return (

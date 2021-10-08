@@ -33,6 +33,10 @@
     font-weight: 600;
     line-height: 20px;
 }
+.sidebarTitle .link:hover{
+    text-decoration: underline;
+    color: teal;
+}
 .sidebarList{
     list-style: none;
     margin-bottom: 30px;

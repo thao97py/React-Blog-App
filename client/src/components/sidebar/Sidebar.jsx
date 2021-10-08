@@ -22,7 +22,7 @@ export default function Sidebar() {
     return (
         <div className="sidebar">
             <div className="sidebarItem">
-                <span className="sidebarTitle">ABOUT ME</span>
+                <span className="sidebarTitle"><Link className="link" to="/about">ABOUT ME</Link></span>
                 <img className="sidebarimg" src={womenphoto} alt="my pic" />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus obcaecati ipsa quasi a deleniti magni nobis enim dolorum necessitatibus.</p>
             </div>

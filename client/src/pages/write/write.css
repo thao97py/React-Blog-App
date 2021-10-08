@@ -1,36 +1,62 @@
 .write{
     padding-top: 50px;
-    padding-left: 8%;
+    margin-left: 8%;
+    margin-right: 8%;
+    
 }
 .writeHeader{
     display: flex;
     justify-content: center;
     font-family: 'Varela Round', sans-serif;
-    margin-bottom: 3%;
-    color: rgb(22, 78, 50);
+    margin-bottom: 1.5%;
+    color: lightcoral
 }
 .writeHeader i{
     margin: 0 10px 20px;
 }
+.writeContainer{
+    display: flex;
+    margin-bottom: 5%;
+    margin-right: 3%;
+}
 .writeImg{
-    width: 70vw;
-    margin-left: 15%;
+    width: 60vw;
     justify-content: center;
     height: 250px;
     border-radius: 10px;
     object-fit: cover;
+    margin-bottom: 5px;
+    margin-left: 15px;
 }
 .writeform{
     position: relative;
 }
-.writeFormGroup{
-    margin-left: 15%;
+.writeFormNewPost{
+    flex:9;
+    margin-right: 3%;
+    background-color: rgb(249 242 242);;
+    padding: 30px 30px 30px 30px;
+    border-radius: 30px;
+    border:1px solid blanchedalmond;
 }
+
 .writeFormGroup i{
     color: tomato;
 }
 .writeFormGroup .fas{
     font-size: 20px;
+}
+.writeFormPrePosts{
+    flex:2;
+    margin-left: 0%;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    color: rgb(56, 53, 53);
+    font-family: 'Varela Round', sans-serif;
+
+}
+.writeFormPrePosts i{
+    margin-right: 18px;
 }
 .writeIcon{
     width: 25px;
@@ -41,64 +67,71 @@
     justify-content: center;
     display: flex;
     font-size: 20px;
-    color: rgb(97, 93, 93);
+    color: rgb(56, 53, 53);
     cursor: pointer;
     margin-right: 10px;
 }
 .writeInput{
     font-size: 30px;
     border:none;
-    padding: 10px 20px;
-    width:70vw;
+    margin: 10px 20px;
+    width:90%;
+    border-radius:10px ;
+    padding-left: 10px;
 }
 .writeInput:focus{
     outline: none;
 }
 .writeText{
     font-size: 20px;
-    height: 100vh;
+    min-height: 650px;
 }
 .writeFormCats{
     margin-top: 20px;
     align-items:center;
-    color: rgb(88, 85, 85);
+    color: rgb(56, 53, 53);
     font-family: 'Varela Round', sans-serif;
     width: 600px;
 }
 .writeFormCats i{
-    margin-right: 5px ;
+    margin-right: 20px ;
 }
-
+.writeFormSelect{
+    margin-left: 40px ;
+}
 .writeFormStory{
     display: flex;
 }
 .writeFormStory .secondFeather{
-    margin-top: 7px;
+    margin-top: 15px;
 }
 .writeFormStory .writeInput{
     padding-top: 0%;
 }
+.writeButton{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
 .writeSubmit{
-    position: absolute;
-    top: 100px;
-    right:50px;
-    background-color: teal;
-    padding: 8px;
-    border: none;
+    right: 20px;
+    background-color: lightcoral;
+    padding:8px 10px;
     border-radius: 10px;
-    border:2px solid teal;
+    border:2px solid lightcoral;
     color: #fff;
     font-size: 16px;
     transition: all 0.3s ease;
+    
 }
 .writeSubmit:hover{
     background-color: #fff;
-    color: teal;
+    color: lightcoral;
 }
 .writeFormUpload{
     display: flex;
     justify-content:left;
     font-family: 'Varela Round', sans-serif;
-    color: rgb(126, 120, 120);
+    color: rgb(56, 53, 53);
     align-items: center;
 }
