@@ -41,9 +41,16 @@ app.use("/api/posts",postRoute);
 app.use("/api/sendmessage",sendEmailRoute);
 app.use("/api/categories",categoryRoute);
 
-app.use('/ab', (req, res) => {
-    res.send('Hello ambda!');
-  })
-app.listen("5000", () => {
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+});
+
+
+// app.use('/ab', (req, res) => {
+//     res.send('Hello ambda!');
+//   })
+app.listen(process.env.PORT || 5000, () => {
     console.log("Backend is running.");
 })
