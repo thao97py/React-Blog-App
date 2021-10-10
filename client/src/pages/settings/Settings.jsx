@@ -9,22 +9,24 @@ export default function Settings() {
 
     const [userName,setUsername] = useState(user.username);
     const [userEmail,setUserEmail] = useState(user.email);
-    const [userPassword,setUserPassword] = useState(user.password);
+    const [userPassword,setUserPassword] = useState(null);
     //const [userPic,setUserPic]=useState(null);
     const [newUserPic,setNewUserPic] =useState(null);
     
     const [successUpdated,setSuccessUpdated]=useState(false);
     const publicFolder ="http://localhost:5000/images/";
-
+    // console.log("pw outside: " + userPassword);
     const handleSubmit= async (e)=>{
         e.preventDefault();
         dispatch({type:"UPDATE_START"});
-        console.log("pw: " + userPassword);
+        // console.log("pw: " + userPassword);
         const updatedUser = {userId:user._id,
                             username:userName,
                             email:userEmail,
-                            password:userPassword
                             };
+        if (userPassword != null){
+            updatedUser.password =userPassword;
+        }
         if(newUserPic){
             const data = new FormData();
             const filename = Date.now() + newUserPic.name;
